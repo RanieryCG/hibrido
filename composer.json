@@ -1,0 +1,17 @@
+{
+    "name": "ranie/aplicacao",
+    "description": "Aplica\u0000\u0000o para teste da H\u0000brido",
+    "authors": [
+        {
+            "name": "Raniery Cordeiro Garcia",
+            "email": "ranierycg@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aplicacao\\": "Aplicacao",
+            "Dominios\\": "Dominios"
+        }
+    }
+}
