@@ -6,7 +6,9 @@ class Controller
 {
     private $name = "IndexController";
 
-    protected $pathController = "../../Dominios/Index/Controllers/";
+    protected $namespaceController = "\Dominios\Index\Controllers\\";
+
+    protected $namespaceControllerError = '\Dominios\Errors\Controllers\\IndexController';
 
     protected $method = "index";
 
@@ -42,8 +44,7 @@ class Controller
         if(array_key_exists(0, $this->explodeUrl)) 
         {
             $ucf = ucfirst($this->explodeUrl[0]);
-            $this->name = str_replace('Index', $ucf, $this->name);
-            $this->pathController = str_replace('Index', $ucf, $this->pathController);
+            $this->namespaceController = str_replace('Index', $ucf, $this->namespaceController);
         }
     }
 
@@ -59,11 +60,19 @@ class Controller
     }
 
     /**
-     * Retorna o objeto do controller
+     * Retorna o namespace do controller válido para esse request
      */
-    public function getControllerObject() : void
+    public function getNamespaceController() : string
     {
-        var_dump(file_exists($this->pathController.$this->name));
+        if(class_exists($this->namespaceController.$this->name)) {
+            return $this->namespaceController.$this->name;
+        }
+        return $this->namespaceControllerError;
+    }
+
+    public function getMethodController() : string
+    {
+        return $this->method;
     }
 
     /**

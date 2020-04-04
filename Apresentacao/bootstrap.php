@@ -7,4 +7,7 @@ $app = new Aplicacao\Core\App();
 $app->start();
 
 // Acha o domínio responsável por responder o request
-$app->controller->getControllerObject();
+$namespaceController =  $app->controller->getNamespaceController();
+$method = $app->controller->getMethodController();
+$controllerObject = new $namespaceController;
+echo $controllerObject->$method();

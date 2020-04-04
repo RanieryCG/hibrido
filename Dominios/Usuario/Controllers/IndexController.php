@@ -2,10 +2,12 @@
 
 namespace Dominios\Usuario\Controllers;
 
-class IndexController
+use Aplicacao\Core\Controller;
+
+class IndexController extends Controller
 {
-    public function __construct()
+    public function index()
     {
-        die('Controller do usuáriasasdso!');
+        return ;
     }
 }

@@ -6,6 +6,6 @@ class IndexController
 {
     public function __construct()
     {
-        return 'Página não encontrada';
+        return 'Erro na rota';
     }
 }
