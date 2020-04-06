@@ -6,10 +6,19 @@ Após a instalação ir até a pasta da aplicação pelo terminal (qualquer um d
 
 Com isso o docker irá criar o ambiente com NGINX + PHP + MYSQL e importar o banco de dados necessário.
 
+Crie também um virtual host no seu sistema com a url hibrido.test
+
+Linux: https://www.digitalocean.com/community/tutorials/como-configurar-apache-virtual-hosts-no-ubuntu-16-04-pt
+
+Passo seis do tutorial de linux
+
+No windows acrescentar a linha: 127.0.0.1       hibrido.test  
+No arquivo C:\Windows\System32\drivers\etc\host
+
 #Bibliotes usadas
 Foram usadas a biblioteca Illuminate/Database via composer que instala o eloquent como ORM da aplicação.
 A biblioteca javascript jquery mask para fazer a máscara dos inputs do tipo cpf e telefone.
-
+ 
 #Arquitetura
 Foi utilizado a arquitetura DDD com algumas modificações. A pasta "Apresentação" ficou responsável pelo front-end, seria o próprio site. A pasta Aplicação seria a parte responsável pela comunicação com os domínios da aplicação, neste caso apenas o domínio "Clientes.
 
