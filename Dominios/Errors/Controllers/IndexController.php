@@ -4,8 +4,8 @@ namespace Dominios\Errors\Controllers;
 
 class IndexController
 {
-    public function __construct()
+    public function index()
     {
-        return 'Erro na rota';
+        return 'Rota não existe';
     }
 }

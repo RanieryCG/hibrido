@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - 80:80
+        volumes: 
+            - ./:/www
+            - ./site.conf:/etc/nginx/conf.d/site.conf
+        networks: 
+            - hibrido
+    php:
+        image: php:7.4-fpm
+        volumes: 
+            - ./:/www
+        expose: 
+            - 9000
+        networks: 
+            - hibrido
+networks: 
+    hibrido:

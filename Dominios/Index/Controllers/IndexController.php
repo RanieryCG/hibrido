@@ -1,6 +1,6 @@
 <?php
 
-namespace Dominios\Usuario\Controllers;
+namespace Dominios\Index\Controllers;
 
 use Aplicacao\Core\Controller;
 
@@ -8,6 +8,6 @@ class IndexController
 {
     public function index()
     {
-        return 'Raniery!';
+        return 'Home';
     }
 }

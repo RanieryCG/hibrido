@@ -7,7 +7,9 @@
             "email": "ranierycg@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "doctrine/orm": "*"
+    },
     "autoload": {
         "psr-4": {
             "Aplicacao\\": "Aplicacao",
