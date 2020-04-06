@@ -4,10 +4,10 @@ namespace Dominios\Index\Controllers;
 
 use Aplicacao\Core\Controller;
 
-class IndexController
+class IndexController extends Controller
 {
     public function index()
     {
-        return 'Home';
+        $this->view('Cliente/Views/criar.php');
     }
 }

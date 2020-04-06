@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "doctrine/orm": "*"
+        "illuminate/database": "^7.4"
     },
     "autoload": {
         "psr-4": {

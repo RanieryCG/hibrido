@@ -12,19 +12,21 @@ class Controller
 
     protected $method = "index";
 
+    protected $bindModel = null;
+
     protected $params = [];
 
     protected $url = null;
 
     protected $explodeUrl = [];
-    
 
-    public function __construct(Url $url)
+    public function setUrl(Url $url)
     {
         $this->url = $url->getPathInfo();
         $this->explodeUrl();
         $this->setControllerFromUrl();
         $this->setMethodFromUrl();
+        $this->setModelFromUrl();
     }
 
 
@@ -60,6 +62,18 @@ class Controller
     }
 
     /**
+     * Acha o id atual vindo da URL.
+     */
+    protected function setModelFromUrl() : void
+    {
+        if(array_key_exists(2, $this->explodeUrl)) 
+        {
+            $this->bindModel = $this->explodeUrl[2];
+        }
+    }
+    
+
+    /**
      * Retorna o namespace do controller válido para esse request
      */
     public function getNamespaceController() : string
@@ -74,12 +88,23 @@ class Controller
     {
         return $this->method;
     }
-
+    
+    public function getModelController()    
+    {
+        return $this->bindModel;
+    }
+    
     /**
      * Retorna o nome do método do controller
      */
     public function getMethod() : string
     {
         return $this->method;
+    }
+
+    // Rendereiza a view
+    public function view($path, $data = [])
+    {
+        require_once(realpath(dirname(__FILE__)).'/../../Dominios/'.$path);
     }
 }

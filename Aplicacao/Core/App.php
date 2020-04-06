@@ -13,7 +13,8 @@ class App
      */
     public function start() : void
     {
-        $this->controller = new Controller(new Url());
+        $this->controller = new Controller();
+        $this->controller->setUrl(new Url());
     }
 
 }

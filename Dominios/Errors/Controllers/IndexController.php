@@ -8,4 +8,9 @@ class IndexController
     {
         return 'Rota não existe';
     }
+
+    public function erro500()
+    {   
+        return 'Erro ao salvar';
+    }
 }
